@@ -15,6 +15,8 @@ maxX=max(dX.keys())
 
 if maxX - minX == 2:
     midX = (maxX+minX)//2
+    if midX not in dX:
+        dX[midX] = 0
     if min(dX[minX], dX[maxX]) >= dX[midX]//2: # cancel max/min
         rem = min(dX[minX], dX[maxX])
         dX[minX] -= rem
